@@ -13,6 +13,7 @@ use Storage;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 //use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Validator;
 
 class CalendarController extends Controller
 {
@@ -196,6 +197,12 @@ die;*/
         //print_r($user_object->role->role);die;
         $current_user_id = $user_object->id;
         $status = $request->status;
+
+        $request->validate([
+            'resolution' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9\s]+$/'],
+            'comments' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9\s]+$/'],
+        ]);
+
         $resolution = $request->resolution;
         $comments = $request->comments;
         $instanceId = $request->instanceId;
