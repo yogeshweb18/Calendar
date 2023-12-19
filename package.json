@@ -14,7 +14,8 @@
     "@vue/compiler-sfc": "^3.3.13",
     "laravel-mix": "^6.0.41",
     "postcss": "^8.3.11",
-    "vue-loader": "^16.2.0"
+    "vue-loader": "^17.3.1",
+    "webpack": "^5.89.0"
   },
   "dependencies": {
     "@fullcalendar/core": "^5.11.2",
