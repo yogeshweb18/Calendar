@@ -203,8 +203,8 @@ die;*/
             'comments' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9\s]+$/'],
         ]);
 
-        $resolution = $request->resolution;
-        $comments = $request->comments;
+        $resolution = strip_tags($request->resolution);
+        $comments = strip_tags($request->comments);
         $instanceId = $request->instanceId;
         $covenantId = $request->covenantId;
         $resolutionStatus = $request->resolutionStatus;
